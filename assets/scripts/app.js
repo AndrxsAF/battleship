@@ -1,3 +1,4 @@
+// replica del html, cada valor es un id
 let spotMatrix = [
     ["a1", "b1", "c1", "d1", "e1", "f1", "g1", "h1", "i1"],
     ["a2", "b2", "c2", "d2", "e2", "f2", "g2", "h2", "i2"],
@@ -10,6 +11,7 @@ let spotMatrix = [
     ["a9", "b9", "c9", "d9", "e9", "f9", "g9", "h9", "i9"]
 ]
 
+// main matrix del juego
 let gameMatrix = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -22,6 +24,8 @@ let gameMatrix = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
+// el primer numero es la parte del barco que es y el segundo es cuantas partes tiene, el barco de 3 digitos es porque hay 2 de 3 digitos
+// no se usa como tal esta función, si no como referencia de los tamaños, en el debugging si utilizaba los valores para saber cuales eran.
 let ships = [
     [12, 22],
     [13, 23, 33],
