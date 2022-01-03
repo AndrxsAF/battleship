@@ -1,6 +1,6 @@
-# BALLOON-GAME
+# BATTLESHIP-GAME
 
-    Basic Balloon Game.
+    Basic Battleship Game.
 
 #### MADE BY ANDRÉS FRANCO (ANDRXSAF)
 
