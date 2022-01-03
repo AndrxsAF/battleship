@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Battleship</title>
+</head>
+<body>
+
+    <div class="content-fluid">
+
+        <div>
+            <p>Battleship</p>
+        </div>
+
+        <div>
+            <table id="game" class="table table-light" style="border-collapse: separate !important; max-width: 500px;">
+                <thead>
+                    <tr class="table-secondary">
+                        <th></th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        <th>G</th>
+                        <th>H</th>
+                        <th>I</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="row1" style="height: 50px;">
+                        <th class="table-secondary">1</th>
+                        <th id="a1" style="width: 50px;"></th>
+                        <th id="b1" style="width: 50px;"></th>
+                        <th id="c1" style="width: 50px;"></th>
+                        <th id="d1" style="width: 50px;"></th>
+                        <th id="e1" style="width: 50px;"></th>
+                        <th id="f1" style="width: 50px;"></th>
+                        <th id="g1" style="width: 50px;"></th>
+                        <th id="h1" style="width: 50px;"></th>
+                        <th id="i1" style="width: 50px;"></th>
+                    </tr>
+                    <tr id="row2" style="height: 50px;">
+                        <th class="table-secondary">2</th>
+                        <th id="a2"></th>
+                        <th id="b2"></th>
+                        <th id="c2"></th>
+                        <th id="d2"></th>
+                        <th id="e2"></th>
+                        <th id="f2"></th>
+                        <th id="g2"></th>
+                        <th id="h2"></th>
+                        <th id="i2"></th>
+                    </tr>
+                    <tr id="row3" style="height: 50px;">
+                        <th class="table-secondary">3</th>
+                        <th id="a3"></th>
+                        <th id="b3"></th>
+                        <th id="c3"></th>
+                        <th id="d3"></th>
+                        <th id="e3"></th>
+                        <th id="f3"></th>
+                        <th id="g3"></th>
+                        <th id="h3"></th>
+                        <th id="i3"></th>
+                    </tr>
+                    <tr id="row4" style="height: 50px;">
+                        <th class="table-secondary">4</th>
+                        <th id="a4"></th>
+                        <th id="b4"></th>
+                        <th id="c4"></th>
+                        <th id="d4"></th>
+                        <th id="e4"></th>
+                        <th id="f4"></th>
+                        <th id="g4"></th>
+                        <th id="h4"></th>
+                        <th id="i4"></th>
+                    </tr>
+                    <tr id="row5" style="height: 50px;">
+                        <th class="table-secondary">5</th>
+                        <th id="a5"></th>
+                        <th id="b5"></th>
+                        <th id="c5"></th>
+                        <th id="d5"></th>
+                        <th id="e5"></th>
+                        <th id="f5"></th>
+                        <th id="g5"></th>
+                        <th id="h5"></th>
+                        <th id="i5"></th>
+                    </tr>
+                    <tr id="row6" style="height: 50px;">
+                        <th class="table-secondary">6</th>
+                        <th id="a6"></th>
+                        <th id="b6"></th>
+                        <th id="c6"></th>
+                        <th id="d6"></th>
+                        <th id="e6"></th>
+                        <th id="f6"></th>
+                        <th id="g6"></th>
+                        <th id="h6"></th>
+                        <th id="i6"></th>
+                    </tr>
+                    <tr id="row7" style="height: 50px;">
+                        <th class="table-secondary">7</th>
+                        <th id="a7"></th>
+                        <th id="b7"></th>
+                        <th id="c7"></th>
+                        <th id="d7"></th>
+                        <th id="e7"></th>
+                        <th id="f7"></th>
+                        <th id="g7"></th>
+                        <th id="h7"></th>
+                        <th id="i7"></th>
+                    </tr>
+                    <tr id="row8" style="height: 50px;">
+                        <th class="table-secondary">8</th>
+                        <th id="a8"></th>
+                        <th id="b8"></th>
+                        <th id="c8"></th>
+                        <th id="d8"></th>
+                        <th id="e8"></th>
+                        <th id="f8"></th>
+                        <th id="g8"></th>
+                        <th id="h8"></th>
+                        <th id="i8"></th>
+                    </tr>
+                    <tr id="row9" style="height: 50px;">
+                        <th class="table-secondary">9</th>
+                        <th id="a9"></th>
+                        <th id="b9"></th>
+                        <th id="c9"></th>
+                        <th id="d9"></th>
+                        <th id="e9"></th>
+                        <th id="f9"></th>
+                        <th id="g9"></th>
+                        <th id="h9"></th>
+                        <th id="i9"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="./assets/scripts/app.js"></script>
+</body>
+</html>
