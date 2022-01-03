@@ -3,3 +3,8 @@ tbody, td, tfoot, th, thead, tr {
     border-style: solid !important;
     border-width: 1px !important;
 }
+
+.orange-borders {
+    border-color: orange;
+    border-width: 2px 2px 2px 2px !important;
+}
