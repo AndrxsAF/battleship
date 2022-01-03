@@ -110,6 +110,7 @@ const renderMatrix = (matrix, ship) => {
     return matrix
 }
 
+// funcion para añadir clase según exista o no un barco en el spot (CON CLICK)
 const attack = (x, y, object) => {
     if (gameMatrix[y][x] == 1){
         object.classList.add("table-danger")
@@ -118,10 +119,12 @@ const attack = (x, y, object) => {
     }
 }
 
+// función de click para el cuadro que toques
 $( "td" ).click(function(event) {
     let spotClick = event.currentTarget.id
     let coordsX
     let coordsY
+    // compara spotMatrix con el id del "td"
     for (y in spotMatrix) {
         for (x in spotMatrix[y]){
             if (spotMatrix[y][x] == spotClick){
@@ -135,9 +138,10 @@ $( "td" ).click(function(event) {
     // console.log(`[${coordsY}][${coordsX}]`)
 })
 
+// función del boton "fire", asigna cada input a un numero y los arregla para que coincidan con las coords de la matrix
 $( "#fire" ).click(function() {
 
-    console.log(`[${$("form")[0][0].value}][${$("form")[0][1].value}]`)
+    // console.log(`[${$("form")[0][0].value}][${$("form")[0][1].value}]`)
     let coordsX = $("form")[0][0].value.toLowerCase()
     switch (coordsX) {
         case 'a':
@@ -175,16 +179,19 @@ $( "#fire" ).click(function() {
             alert('Y coord has to be a number from 1 to 9')
         }
     let locateID = spotMatrix[coordsY][coordsX]
-    console.log(locateID)
+    // console.log(locateID)
+    // se añade la clase según exista o no un ship
     if (gameMatrix[coordsY][coordsX] == 1){
         $( `#${locateID}`).addClass("table-danger")
     } else if (gameMatrix[coordsY][coordsX] == 0) {
         $( `#${locateID}`).addClass("table-dark")
     }
+    // reinicia los input
     $("form")[0][0].value = ''
     $("form")[0][1].value = ''
 }) 
 
+// función del botón show, lo que hace es buscar dentro de la matrix los 1 y asignarles la clase "orange-borders"
 $( "#show" ).click(function() {
     for (i in gameMatrix) {
         for (j in gameMatrix) {
@@ -196,4 +203,5 @@ $( "#show" ).click(function() {
     }
 })
 
+// inicializa el juego llamando esta función
 renderMatrix(gameMatrix, ships)
