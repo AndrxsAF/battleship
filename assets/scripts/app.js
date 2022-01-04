@@ -18,7 +18,11 @@ let ships = [
     [15, 25, 35, 45, 55]
 ]
 
+// validation function, used to verify every element of the array //
+
 const validation = (boolean) => boolean == true
+
+// attack function, changes the status of the game and also modifies cells class //
 
 const attack = (x, y) => {
     let id = (String.fromCharCode(97 + Number(x))) + (Number(y) + 1)
@@ -30,6 +34,8 @@ const attack = (x, y) => {
         gameMatrix[y][x] = 2
     }
 }
+
+// render game matrix function //
 
 const renderMatrix = (matrix, ship) => {
     let positionX, assignBoolean, direction, positionY, shipValidator, validator
@@ -75,10 +81,14 @@ const renderMatrix = (matrix, ship) => {
     return matrix
 }
 
+// fire a cell function with click listener //
+
 $( "td" ).click(function(event) {
     let id = event.currentTarget.id.split('')
     attack(id[0].charCodeAt(0) - 97, Number(id[1]) - 1)
 })
+
+// fire a cell function with keyboard listener //
 
 $( "#fire" ).click(function() {
     let coordsX = $("form")[0][0].value.toLowerCase().charCodeAt(0) - 97
@@ -90,6 +100,8 @@ $( "#fire" ).click(function() {
     $("form")[0][1].value = ''
 }) 
 
+// show ships function //
+
 $( "#show" ).click(function() {
     for (i in gameMatrix) {
         for (j in gameMatrix) {
@@ -99,5 +111,7 @@ $( "#show" ).click(function() {
         }
     }
 })
+
+// initialize game //
 
 renderMatrix(gameMatrix, ships)
