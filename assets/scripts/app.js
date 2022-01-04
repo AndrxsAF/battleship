@@ -92,8 +92,8 @@ $( "td" ).click(function(event) {
 
 $( "#fire" ).click(function() {
     let coordsX = $("form")[0][0].value.toLowerCase().charCodeAt(0) - 97
-    if (coordsX > 8) { alert('X coord has to be a letter from A to I...') }
     let coordsY = $("form")[0][1].value - 1
+    if (coordsX > 8) { alert('X coord has to be a letter from A to I...') }
     if((coordsY < 0) || (coordsY > 8)) { alert('Y coord has to be a number from 1 to 9') }
     if((coordsY >= 0) && (coordsY < 9) && (coordsX < 9) && (coordsX >= 0)){ attack(coordsX, coordsY) }
     $("form")[0][0].value = ''
@@ -105,9 +105,7 @@ $( "#fire" ).click(function() {
 $( "#show" ).click(function() {
     for (i in gameMatrix) {
         for (j in gameMatrix) {
-            if (gameMatrix[i][j] == 1 || gameMatrix[i][j] == 2){
-                $(`#${(String.fromCharCode(97 + Number(j)))}${Number(i)+1}`).toggleClass("orange-borders")
-            }
+            if (gameMatrix[i][j] == 1 || gameMatrix[i][j] == 2){$(`#${(String.fromCharCode(97 + Number(j)))}${Number(i)+1}`).toggleClass("orange-borders")}
         }
     }
 })
